@@ -4,10 +4,15 @@ import {Dropdown} from './Dropdown.js';
 
 class Option extends React.Component {
     render(){
+
+        console.log("hiiiiiiiiiiiii")
+
         return(
             <div className='option_container'>
                 <p>{this.props.note ? this.props.note : "Option with undefined name"}</p>
-                <Dropdown></Dropdown>
+                <Dropdown>
+                    {this.props.options ? this.props.options : ["No Options"]}
+                </Dropdown>
             </div>
         )
     }

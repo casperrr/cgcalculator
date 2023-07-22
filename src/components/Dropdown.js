@@ -6,10 +6,11 @@ class Dropdown extends React.Component {
         
         return(
             <>
-                <select className='dropdown'>
-                    <option>
-                        test
-                    </option>
+                <select className='dropdown' label='hello'>
+                    {this.props.children.map((option)=> 
+                        <option>{option}</option>
+                    )}
+                    
                 </select>
             </>
         )
