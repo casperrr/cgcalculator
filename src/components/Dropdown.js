@@ -5,9 +5,13 @@ class Dropdown extends React.Component {
     render(){
         
         return(
-            <div className='dropdown_container'>
-                <p>This is a Dropdown</p>
-            </div>
+            <>
+                <select className='dropdown'>
+                    <option>
+                        test
+                    </option>
+                </select>
+            </>
         )
     }
 }
