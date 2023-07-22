@@ -7,8 +7,8 @@ class Dropdown extends React.Component {
         return(
             <>
                 <select className='dropdown' label='hello'>
-                    {this.props.children.map((option)=> 
-                        <option>{option}</option>
+                    {this.props.children.map((option, index)=> 
+                        <option key={index}>{option}</option>
                     )}
                 </select>
             </>

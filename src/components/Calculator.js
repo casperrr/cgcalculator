@@ -10,20 +10,33 @@ const testOptions = [
 ];
 
 
-const selections = {
-    options:[
-        this.createOption("Do you need a full windows desktop?",["Full windows desktop.","Web applications only"]),
-        this.createOption("user needs BYOD device?",["yes","no","Reminder use a different component for this"]),
-        this.createOption("THIS IS AN OPTION FOR TESTING!",["1","2","3","4","5"])
-    ],
 
-    createOption(note, options){
-        return({note:note,options:options});
-    },
+
+class Options{
+    constructor(note, type, options){
+        this.note = note;
+        this.type = type;
+        if(options){
+            this.options = options;
+        }
+    }
+}
+
+const selections = {
+
+    options:[
+        new Option("Do you need a full windows desktop?","drop",["Full windows desktop.","Web applications only"]),
+        new Option("user needs BYOD device?","drop",["yes","no","Reminder use a different component for this"]),
+        new Option("THIS IS AN OPTION FOR TESTING!","drop",["1","2","3","4","5"]),
+    ]
+
+
 };
+
 
 class Calculator extends React.Component {
     render() {
+        // console.log(selections);
         return (
             <div className='calculator_container'>
                 <h2 className='calculator_title'>Cost Calculator:</h2>
@@ -36,11 +49,13 @@ class Calculator extends React.Component {
                     <Option note="This is an option" options={testOptions}/>
                     <Option />
                     <Option />
+                    {selections.options.map((option, index)=> <Option key={index} note={option.note} type={option.type} options={option.options}/>)}
                 </div>
                 <Output />
             </div>
         )
     }
 }
+
 
 export { Calculator };
