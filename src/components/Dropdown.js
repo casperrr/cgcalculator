@@ -10,7 +10,6 @@ class Dropdown extends React.Component {
                     {this.props.children.map((option)=> 
                         <option>{option}</option>
                     )}
-                    
                 </select>
             </>
         )
