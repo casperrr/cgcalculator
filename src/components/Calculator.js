@@ -9,6 +9,19 @@ const testOptions = [
     "option 3"
 ];
 
+
+const selections = {
+    options:[
+        this.createOption("Do you need a full windows desktop?",["Full windows desktop.","Web applications only"]),
+        this.createOption("user needs BYOD device?",["yes","no","Reminder use a different component for this"]),
+        this.createOption("THIS IS AN OPTION FOR TESTING!",["1","2","3","4","5"])
+    ],
+
+    createOption(note, options){
+        return({note:note,options:options});
+    },
+};
+
 class Calculator extends React.Component {
     render() {
         return (
